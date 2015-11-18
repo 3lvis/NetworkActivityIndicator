@@ -18,19 +18,19 @@
 
 Adding an activity to the network activity indicator manager is fairly simple:
 
-### Displaying networking activity indicator
+### Displaying networ activity indicator
 
 ```swift
 NetworkActivityIndicator.sharedIndicator.visible = true
 ```
 
-### Hiding networking activity indicator
+### Hiding network activity indicator
 
 ```swift
 NetworkActivityIndicator.sharedIndicator.visible = false
 ```
 
-### Balance networking activity indicator
+### Balance network activity indicator
 
 ```swift
 NetworkActivityIndicator.sharedIndicator.visible = true
