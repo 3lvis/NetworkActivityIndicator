@@ -32,6 +32,12 @@ A great introduction to what's wrong with Apple's `networkActivityIndicatorVisib
 >
 >— [Ole Begemann, Managing the Network Activity Indicator](http://oleb.net/blog/2009/09/managing-the-network-activity-indicator/)
 
+## Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/3lvis/NetworkActivityIndicator/master/GIF/sample.gif"/>
+</p>
+
 ## Usage
 
 ### Displaying networ activity indicator
@@ -64,12 +70,6 @@ NetworkActivityIndicator.sharedIndicator.visible = false
 // Network activity indicator hides, activity count = 0
 
 ```
-
-## Demo
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/3lvis/NetworkActivityIndicator/master/GIF/sample.gif"/>
-</p>
 
 ## Installation
 
