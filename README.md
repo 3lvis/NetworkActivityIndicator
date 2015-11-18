@@ -8,22 +8,16 @@
 
 Adding an activity to the network activity indicator manager is fairly simple:
 
-### Adding activities
+### Displaying networking activity indicator
 
 ```swift
-NetworkActivityIndicator.add("Loading timeline")
+NetworkActivityIndicator.sharedIndicator.visible = true
 ```
 
-### Removing activities
+### Hiding networking activity indicator
 
 ```swift
-NetworkActivityIndicator.remove("Loading timeline")
-```
-
-### List in progress activities
-
-```swift
-NetworkActivityIndicator.all()
+NetworkActivityIndicator.sharedIndicator.visible = false
 ```
 
 ## Installation
