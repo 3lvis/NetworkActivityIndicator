@@ -29,6 +29,8 @@ A great introduction to what's wrong with Apple's `networkActivityIndicatorVisib
 >If you access the `networkActivityIndicatorVisible` property directly from multiple methods in these cases, chances are that you hide the indicator when the first task has finished even though your app continues to access the network. You would need to implement a counter to remember how often the network activity indicator has been shown and hidden to manage it correctly. If your code is spread among multiple view controllers, this gets even more cumbersome.
 >
 >This “problem” is admittedly a small aspect of usability but the solution is so simple and elegant that I think it is worth doing even if you do not deal with multiple concurrent network activity tasks in your app.
+>
+>— [Ole Begemann, Managing the Network Activity Indicator](http://oleb.net/blog/2009/09/managing-the-network-activity-indicator/)
 
 ## Usage
 
