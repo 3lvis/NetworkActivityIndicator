@@ -30,6 +30,24 @@ NetworkActivityIndicator.sharedIndicator.visible = true
 NetworkActivityIndicator.sharedIndicator.visible = false
 ```
 
+### Balance networking activity indicator
+
+```swift
+NetworkActivityIndicator.sharedIndicator.visible = true
+NetworkActivityIndicator.sharedIndicator.visible = true
+NetworkActivityIndicator.sharedIndicator.visible = true
+// Activities count = 3
+
+NetworkActivityIndicator.sharedIndicator.visible = false
+// Network activity indicator still showing, activities count = 2
+
+NetworkActivityIndicator.sharedIndicator.visible = false
+NetworkActivityIndicator.sharedIndicator.visible = false
+// Network activity indicator hides, activities count = 0
+
+```
+
+
 ## Installation
 
 **NetworkActivityIndicator** is available through [CocoaPods](http://cocoapods.org). To install
