@@ -10,6 +10,8 @@ class Tests: XCTestCase {
         }
     }
 
+    // Note: UIApplication.sharedApplication().networkActivityIndicatorVisible ALWAYS returns false
+
     func testVisible() {
         NetworkActivityIndicator.sharedIndicator.visible = true
 
@@ -21,7 +23,6 @@ class Tests: XCTestCase {
 
         XCTAssertFalse(UIApplication.sharedApplication().networkActivityIndicatorVisible)
     }
-
 
     func testMultipleVisible() {
         NetworkActivityIndicator.sharedIndicator.visible = true
