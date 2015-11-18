@@ -34,8 +34,6 @@ A great introduction to what's wrong with Apple's `networkActivityIndicatorVisib
 
 ## Usage
 
-Adding an activity to the network activity indicator manager is fairly simple:
-
 ### Displaying networ activity indicator
 
 ```swift
