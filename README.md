@@ -1,4 +1,4 @@
-# NetworkActivityIndicatorQueue
+# NetworkActivityIndicatorManager
 
 [![Version](https://img.shields.io/cocoapods/v/NetworkActivityIndicatorQueue.svg?style=flat)](https://cocoapods.org/pods/NetworkActivityIndicatorQueue)
 [![License](https://img.shields.io/cocoapods/l/NetworkActivityIndicatorQueue.svg?style=flat)](https://cocoapods.org/pods/NetworkActivityIndicatorQueue)
