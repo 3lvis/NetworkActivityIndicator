@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/NetworkActivityIndicator.svg?style=flat)](https://cocoapods.org/pods/NetworkActivityIndicator)
 [![Platform](https://img.shields.io/cocoapods/p/NetworkActivityIndicator.svg?style=flat)](https://cocoapods.org/pods/NetworkActivityIndicator)
 
+## Introduction
+
 > A network activity indicator appears in the status bar and shows that network activity is occurring.
 >The network activity indicator:
 >
@@ -13,6 +15,20 @@
 > Display the network activity indicator to provide feedback when your app accesses the network for more than a couple of seconds. If the operation finishes sooner than that, you don’t have to show the network activity indicator, because the indicator is likely to disappear before users notice its presence.
 >
 >— [iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Controls.html)
+
+## The problem
+
+A great introduction to what's wrong with Apple's `networkActivityIndicatorVisible:` API:
+
+>iPhone developers should use the little network activity indicator in the iPhone’s status bar to inform the user when their app accesses the network. Showing or hiding the indicator is simple:
+>
+>`UIApplication.sharedApplication().networkActivityIndicatorVisible = true`
+>
+>Most people probably call this method from their view controllers. This works fine until you have to deal with multiple concurrent tasks that access the network and/or multiple view controllers that are active simultaneously. For example, you might be running a HTTP request to download data from a webservice in the background and using a `MKMapView` instance that accesses the network whenever the user moves the map to a new location.
+>
+>If you access the `networkActivityIndicatorVisible` property directly from multiple methods in these cases, chances are that you hide the indicator when the first task has finished even though your app continues to access the network. You would need to implement a counter to remember how often the network activity indicator has been shown and hidden to manage it correctly. If your code is spread among multiple view controllers, this gets even more cumbersome.
+>
+>This “problem” is admittedly a small aspect of usability but the solution is so simple and elegant that I think it is worth doing even if you do not deal with multiple concurrent network activity tasks in your app.
 
 ## Usage
 
