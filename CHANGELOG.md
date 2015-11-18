@@ -1,1 +1,1 @@
-Check https://github.com/3lvis/NetworkActivityIndicatorManager/releases for more information.
+Check https://github.com/3lvis/NetworkActivityIndicator/releases for more information.
