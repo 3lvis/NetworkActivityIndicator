@@ -30,7 +30,7 @@ NetworkActivityIndicator.sharedIndicator.visible = true
 NetworkActivityIndicator.sharedIndicator.visible = false
 ```
 
-### Balance network activity indicator
+### Balancing network activity indicator
 
 ```swift
 NetworkActivityIndicator.sharedIndicator.visible = true
