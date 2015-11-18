@@ -65,6 +65,11 @@ NetworkActivityIndicator.sharedIndicator.visible = false
 
 ```
 
+## Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/3lvis/NetworkActivityIndicator/master/GIF/sample.gif"/>
+</p>
 
 ## Installation
 
