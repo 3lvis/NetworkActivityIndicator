@@ -1,25 +1,39 @@
 import UIKit
 
 public class NetworkActivityIndicator {
+
+    /**
+     The shared instance.
+     */
     public static let sharedIndicator = NetworkActivityIndicator()
 
-    internal var numberOfCalls = 0
+    /**
+     The number of activities in progress.
+     */
+    internal var activitiesCount = 0
 
+    /**
+     A Boolean value that turns an indicator of network activity on or off.
+
+     Specify true if the app should show network activity and false if it should not. The default value is false. A spinning indicator in the status bar shows network activity. Multiple calls to visible cause an internal counter to take care of persisting the number of times this method has being called.
+     */
     public var visible: Bool = false {
         didSet {
             if visible {
-                self.numberOfCalls++
+                self.activitiesCount++
             } else {
-                self.numberOfCalls--
+                self.activitiesCount--
             }
 
-            if self.numberOfCalls < 0 {
-                self.numberOfCalls = 0
+            if self.activitiesCount < 0 {
+                self.activitiesCount = 0
             }
 
-            dispatch_async(dispatch_get_main_queue()) {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = (self.numberOfCalls > 0)
-            }
+            #if os(iOS)
+                dispatch_async(dispatch_get_main_queue()) {
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = (self.activitiesCount > 0)
+                }
+            #endif
         }
     }
 }

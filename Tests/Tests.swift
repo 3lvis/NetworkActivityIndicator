@@ -5,7 +5,7 @@ class Tests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        for _ in 0..<NetworkActivityIndicator.sharedIndicator.numberOfCalls {
+        for _ in 0..<NetworkActivityIndicator.sharedIndicator.activitiesCount {
             NetworkActivityIndicator.sharedIndicator.visible = false
         }
     }
