@@ -5,43 +5,54 @@ class Tests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        for activity in NetworkActivityIndicatorManager.all() {
-            NetworkActivityIndicatorManager.remove(activity)
+        for _ in 0..<NetworkActivityIndicator.sharedIndicator.numberOfCalls {
+            NetworkActivityIndicator.sharedIndicator.visible = false
         }
     }
 
-    func testAdd() {
-        NetworkActivityIndicatorManager.add("test")
-        XCTAssertEqual(NetworkActivityIndicatorManager.all().first, "test")
+    func testVisible() {
+        NetworkActivityIndicator.sharedIndicator.visible = true
+
+        XCTAssertTrue(UIApplication.sharedApplication().networkActivityIndicatorVisible)
     }
 
-    func testAddUnique() {
-        NetworkActivityIndicatorManager.add("test")
-        NetworkActivityIndicatorManager.add("test")
-        NetworkActivityIndicatorManager.add("test")
-        XCTAssertEqual(NetworkActivityIndicatorManager.all().count, 1)
+    func testHidden() {
+        NetworkActivityIndicator.sharedIndicator.visible = false
+
+        XCTAssertFalse(UIApplication.sharedApplication().networkActivityIndicatorVisible)
     }
 
-    func testRemove() {
-        NetworkActivityIndicatorManager.add("test")
-        XCTAssertEqual(NetworkActivityIndicatorManager.all().first, "test")
 
-        NetworkActivityIndicatorManager.remove("test")
-        XCTAssertEqual(NetworkActivityIndicatorManager.all().count, 0)
+    func testMultipleVisible() {
+        NetworkActivityIndicator.sharedIndicator.visible = true
+        NetworkActivityIndicator.sharedIndicator.visible = true
+        NetworkActivityIndicator.sharedIndicator.visible = true
+
+        XCTAssertTrue(UIApplication.sharedApplication().networkActivityIndicatorVisible)
     }
 
-    func testSafeRemoval() {
-        NetworkActivityIndicatorManager.remove("test")
-        NetworkActivityIndicatorManager.remove("test")
-        NetworkActivityIndicatorManager.remove("test")
-        XCTAssertEqual(NetworkActivityIndicatorManager.all().count, 0)
+    func testMultipleHidden() {
+        NetworkActivityIndicator.sharedIndicator.visible = false
+        NetworkActivityIndicator.sharedIndicator.visible = false
+        NetworkActivityIndicator.sharedIndicator.visible = false
+
+        XCTAssertFalse(UIApplication.sharedApplication().networkActivityIndicatorVisible)
     }
 
-    func testAll() {
-        NetworkActivityIndicatorManager.add("test1")
-        NetworkActivityIndicatorManager.add("test2")
-        NetworkActivityIndicatorManager.add("test3")
+    func testBalance() {
+        NetworkActivityIndicator.sharedIndicator.visible = true
+        NetworkActivityIndicator.sharedIndicator.visible = true
+        NetworkActivityIndicator.sharedIndicator.visible = true
 
-        XCTAssertEqual(Set(NetworkActivityIndicatorManager.all()), Set(["test1", "test2", "test3"]))
+        XCTAssertTrue(UIApplication.sharedApplication().networkActivityIndicatorVisible)
+
+        NetworkActivityIndicator.sharedIndicator.visible = false
+
+        XCTAssertTrue(UIApplication.sharedApplication().networkActivityIndicatorVisible)
+
+        NetworkActivityIndicator.sharedIndicator.visible = false
+        NetworkActivityIndicator.sharedIndicator.visible = false
+
+        XCTAssertFalse(UIApplication.sharedApplication().networkActivityIndicatorVisible)
     }
 }
