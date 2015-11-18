@@ -4,6 +4,16 @@
 [![License](https://img.shields.io/cocoapods/l/NetworkActivityIndicator.svg?style=flat)](https://cocoapods.org/pods/NetworkActivityIndicator)
 [![Platform](https://img.shields.io/cocoapods/p/NetworkActivityIndicator.svg?style=flat)](https://cocoapods.org/pods/NetworkActivityIndicator)
 
+> A network activity indicator appears in the status bar and shows that network activity is occurring.
+>The network activity indicator:
+>
+> - Spins in the status bar while network activity proceeds and disappears when network activity stops
+> - Doesn’t allow user interaction
+>
+> Display the network activity indicator to provide feedback when your app accesses the network for more than a couple of seconds. If the operation finishes sooner than that, you don’t have to show the network activity indicator, because the indicator is likely to disappear before users notice its presence.
+
+[Source](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Controls.html)
+
 ## Usage
 
 Adding an activity to the network activity indicator manager is fairly simple:
