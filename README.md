@@ -6,8 +6,24 @@
 
 ## Usage
 
+Adding an activity to the network activity indicator manager is fairly simple:
+
+### Adding activities
+
 ```swift
-<API>
+NetworkActivityIndicatorManager.add("Loading timeline")
+```
+
+### Removing activities
+
+```swift
+NetworkActivityIndicatorManager.remove("Loading timeline")
+```
+
+### List in progress activities
+
+```swift
+NetworkActivityIndicatorManager.all()
 ```
 
 ## Installation
