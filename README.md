@@ -40,7 +40,7 @@ A great introduction to what's wrong with Apple's `networkActivityIndicatorVisib
 
 ## Usage
 
-### Displaying networ activity indicator
+### Displaying network activity indicator
 
 ```swift
 NetworkActivityIndicator.sharedIndicator.visible = true
