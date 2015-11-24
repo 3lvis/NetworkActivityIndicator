@@ -32,10 +32,20 @@ public class NetworkActivityIndicator {
             }
 
             #if os(iOS)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = (self.activitiesCount > 0)
-                })
+                #if DEBUG
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.update()
+                    }
+                #else
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                        self.update()
+                    })
+                #endif
             #endif
         }
+    }
+
+    private func update() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = (self.activitiesCount > 0)
     }
 }
