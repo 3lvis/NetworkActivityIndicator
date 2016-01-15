@@ -2,7 +2,7 @@
     import UIKit
 #endif
 
-public class NetworkActivityIndicator:NSObject {
+public class NetworkActivityIndicator: NSObject {
 
     /**
      The shared instance.
