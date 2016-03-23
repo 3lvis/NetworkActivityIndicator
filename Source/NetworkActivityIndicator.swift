@@ -22,9 +22,9 @@ public class NetworkActivityIndicator: NSObject {
     public var visible: Bool = false {
         didSet {
             if visible {
-                self.activitiesCount++
+                self.activitiesCount += 1
             } else {
-                self.activitiesCount--
+                self.activitiesCount -= 1
             }
 
             if self.activitiesCount < 0 {
