@@ -2,12 +2,12 @@
     import UIKit
 #endif
 
-public class NetworkActivityIndicator: NSObject {
+open class NetworkActivityIndicator: NSObject {
 
     /**
      The shared instance.
      */
-    public static let sharedIndicator = NetworkActivityIndicator()
+    open static let sharedIndicator = NetworkActivityIndicator()
 
     /**
      The number of activities in progress.
@@ -19,7 +19,7 @@ public class NetworkActivityIndicator: NSObject {
 
      Specify true if the app should show network activity and false if it should not. The default value is false. A spinning indicator in the status bar shows network activity. Multiple calls to visible cause an internal counter to take care of persisting the number of times this method has being called.
      */
-    public var visible: Bool = false {
+    open var visible: Bool = false {
         didSet {
             if visible {
                 self.activitiesCount += 1
@@ -32,8 +32,8 @@ public class NetworkActivityIndicator: NSObject {
             }
 
             #if os(iOS)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = (self.activitiesCount > 0)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = (self.activitiesCount > 0)
                 })
             #endif
         }
