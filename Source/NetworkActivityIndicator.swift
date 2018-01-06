@@ -28,8 +28,9 @@ public class NetworkActivityIndicator: NSObject {
             if self.activitiesCount < 0 {
                 self.activitiesCount = 0
             }
-
+          
             UIApplication.shared.isNetworkActivityIndicatorVisible = (self.activitiesCount > 0)
+
         }
     }
 }
