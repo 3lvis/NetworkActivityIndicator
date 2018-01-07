@@ -1,6 +1,4 @@
-#if os(iOS)
-    import UIKit
-#endif
+import UIKit
 
 public class NetworkActivityIndicator: NSObject {
 
@@ -30,12 +28,9 @@ public class NetworkActivityIndicator: NSObject {
             if self.activitiesCount < 0 {
                 self.activitiesCount = 0
             }
+          
+            UIApplication.shared.isNetworkActivityIndicatorVisible = (self.activitiesCount > 0)
 
-            #if os(iOS)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = (self.activitiesCount > 0)
-                })
-            #endif
         }
     }
 }
