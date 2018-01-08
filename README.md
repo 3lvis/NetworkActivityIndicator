@@ -43,30 +43,30 @@ A great introduction to what's wrong with Apple's `networkActivityIndicatorVisib
 ### Displaying network activity indicator
 
 ```swift
-NetworkActivityIndicator.sharedIndicator.visible = true
+NetworkActivityIndicator.shared.visible = true
 ```
 
 ### Hiding network activity indicator
 
 ```swift
-NetworkActivityIndicator.sharedIndicator.visible = false
+NetworkActivityIndicator.shared.visible = false
 ```
 
 ### Balancing network activity indicator
 
 ```swift
-NetworkActivityIndicator.sharedIndicator.visible = true
+NetworkActivityIndicator.shared.visible = true
 // Network activity indicator starts showing, activity count = 1
 
-NetworkActivityIndicator.sharedIndicator.visible = true
-NetworkActivityIndicator.sharedIndicator.visible = true
+NetworkActivityIndicator.shared.visible = true
+NetworkActivityIndicator.shared.visible = true
 // Activity count = 3
 
-NetworkActivityIndicator.sharedIndicator.visible = false
+NetworkActivityIndicator.shared.visible = false
 // Network activity indicator still showing, activity count = 2
 
-NetworkActivityIndicator.sharedIndicator.visible = false
-NetworkActivityIndicator.sharedIndicator.visible = false
+NetworkActivityIndicator.shared.visible = false
+NetworkActivityIndicator.shared.visible = false
 // Network activity indicator hides, activity count = 0
 
 ```
